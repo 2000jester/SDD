@@ -1,4 +1,7 @@
-THIS IS A JAVASCRIPT PROJECT FOR A SOFTWARE DESIGN AND DEVELOPMENT ASSESSMENT
+# SDD Major Project
+-------------------
+**@name: NO NAME**
+**@date: 15/06/2017**
+**@contributors: 2000jester, OrmusELdesu**
 
-
-WOW YOU DOIN ME A FASCINATE
+open source project
