@@ -1,5 +1,6 @@
 var canvas = document.getElementById("canvas"),
     context = canvas.getContext("2d");
+//-------------------- CANVAS --------------------//
 
 // run function
 function run() // gets called 60FPS
