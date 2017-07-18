@@ -1,11 +1,24 @@
 var canvas = document.getElementById("canvas"),
     context = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    cw = canvas.width;
+    ch = canvas.height;
+    document.body.style.overflow = 'hidden';
+    document.body.style.margin = '0';
 //-------------------- CANVAS --------------------//
-
+//allows different states to be selected
+var state = "title";
+//sets resources to invisible by default
+document.getElementById("vid1").style.visibility = "hidden"
 // run function
 function run() // gets called 60FPS
 {
-    console.log("I work")
+    switch(state){
+      case "title":
+      runTitle()
+      break;
+    }
 }
 
 // animation loop
@@ -17,7 +30,7 @@ function run() // gets called 60FPS
         // make onEacFrame a callback function with parameter to call back to
         onEachFrame = function(callback)
         {
-            // make a anothe function that will call the call back parameter
+            // make a another function that will call the call back parameter
             var _callback = function()
             {
                 callback(); // call paramter callback
