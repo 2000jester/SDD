@@ -18,6 +18,21 @@ function run() // gets called 60FPS
       case "title":
       runTitle()
       break;
+      case "help":
+      runHelp()
+      break;
+      case "instruct":
+      runInstruct()
+      break;
+      case "menu":
+      runMenu()
+      break;
+      case "race":
+      runRace()
+      break;
+      case "relfex":
+      runReflex()
+      break;
     }
 }
 
