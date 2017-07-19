@@ -19,14 +19,15 @@ var state = "title";
 
 window.addEventListener("mousedown", function(evt){
 	if(state === "title"){ //if the current state is equal to "title"
-        if((evt.x > 0 && evt.x < cw) && (evt.y > 0 && evt.y < ch)){ //if the mouse click was within the boundaries of the proceed button
+        if((evt.x > proceed.x && evt.x < proceed.x + proceed.width) && (evt.y > proceed.y && evt.y < proceed.y + proceed.height))
+        { //if the mouse click was within the boundaries of the proceed button
            // state = "menu" //changes the current state to menu
+           console.log("mouse is inside")
         }
     }
 });
 
 //RUN
-
 function run() // gets called 60FPS
 {
     switch(state){
