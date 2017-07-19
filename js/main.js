@@ -22,6 +22,7 @@ window.addEventListener("mousedown", function(evt){
         if((evt.x > proceed.x && evt.x < proceed.x + proceed.width) && (evt.y > proceed.y && evt.y < proceed.y + proceed.height))
         { //if the mouse click was within the boundaries of the proceed button
            // state = "menu" //changes the current state to menu
+           state = "menu";
            console.log("mouse is inside")
         }
     }
