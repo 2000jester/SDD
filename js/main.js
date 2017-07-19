@@ -6,12 +6,27 @@ var cw = canvas.width;
 var ch = canvas.height;
 document.body.style.overflow = 'hidden';
 document.body.style.margin = '0';
-//-------------------- CANVAS --------------------//
-//allows different states to be selected
-var state = "title";
 //sets resources to invisible by default
 document.getElementById("vid1").style.visibility = "hidden"
-// run function
+//-------------------- CANVAS --------------------//
+
+//VARIABLES
+
+//allows different states to be selected
+var state = "title";
+
+//EVENT LISTENERS
+
+window.addEventListener("mousedown", function(evt){
+	if(state === "title"){ //if the current state is equal to "title"
+        if((evt.x > 0 && evt.x < cw) && (evt.y > 0 && evt.y < ch)){ //if the mouse click was within the boundaries of the proceed button
+           // state = "menu" //changes the current state to menu
+        }
+    }
+});
+
+//RUN
+
 function run() // gets called 60FPS
 {
     switch(state){
