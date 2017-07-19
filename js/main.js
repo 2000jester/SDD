@@ -1,11 +1,11 @@
-var canvas = document.getElementById("canvas"),
-    context = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    cw = canvas.width;
-    ch = canvas.height;
-    document.body.style.overflow = 'hidden';
-    document.body.style.margin = '0';
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+var cw = canvas.width;
+var ch = canvas.height;
+document.body.style.overflow = 'hidden';
+document.body.style.margin = '0';
 //-------------------- CANVAS --------------------//
 //allows different states to be selected
 var state = "title";
