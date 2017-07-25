@@ -21,3 +21,10 @@
 #title-proceed-button:hover {
     cursor: pointer;
 }
+
+#teach-video-container {
+    float: left;
+}
+#teach-button-back {
+    float: right;
+}
