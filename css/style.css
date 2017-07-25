@@ -6,6 +6,19 @@
     background: #383838;
 }
 
-#title-proceed-button-container {
-    background-color: 
+#title-proceed-button {
+    background-color: lightgrey;
+    width: 100px;
+    height: 50px;
+    color: black;
+    margin-top: 100px;
+}
+#title-proceed-button:active {
+    background-color: grey;
+    width: 100px;
+    height: 50px;
+    color: white;
+}
+#title-proceed-button:hover {
+    cursor: pointer;
 }
