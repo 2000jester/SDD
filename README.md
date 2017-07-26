@@ -1,4 +1,4 @@
-# SDD Major Project
+# SDD Major Prelim Project
 -------------------
 **@name: Typing Practice**    
 **@date: 16/06/2017**    
