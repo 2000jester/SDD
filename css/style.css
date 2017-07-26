@@ -1,3 +1,6 @@
+/*
+BG Colors
+*/
 #title-body {
     background: #383838;
 }
@@ -7,7 +10,9 @@
 #teach-body{
     background: #383838;
 }
-
+/*
+Title Page
+*/
 #title-proceed-button {
     background-color: lightgrey;
     width: 100px;
@@ -17,7 +22,7 @@
     border-radius:15px;
 }
 #title-proceed-button:active {
-    background-color: grey;
+    background-color: black;
     width: 100px;
     height: 50px;
     color: white;
@@ -30,7 +35,9 @@
     border-radius:15px;
 
 }
-
+/*
+Teach Page
+*/
 #teach-video-container {
     width: 90%;
 }
@@ -57,5 +64,149 @@
     text-align: center;
     background-color: black;
     color: white;
+    border-radius: 15px;
+}
+/*
+Menu Page
+*/
+#menu-logo-container {
+    float: right;
+}
+#menu-buttons {
+    margin-top: 160px;
+}
+/*
+normal
+*/
+#menu-buttons-teach {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+    margin-top: 40px;
+    margin-left: 100px;
+}
+#menu-buttons-reflex {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    margin-left: 100px;
+}
+#menu-buttons-race {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    margin-left: 100px;
+}
+#menu-buttons-help {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    margin-left: 100px;
+}
+#menu-buttons-exit {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    margin-left: 100px;
+}
+/*
+Hover
+*/
+#menu-buttons-teach:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+#menu-buttons-reflex:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+#menu-buttons-race:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+#menu-buttons-help:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+#menu-buttons-exit:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+/*
+Active
+*/
+#menu-buttons-teach:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+#menu-buttons-reflex:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+#menu-buttons-race:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+#menu-buttons-help:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+#menu-buttons-exit:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
     border-radius: 15px;
 }
