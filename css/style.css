@@ -85,8 +85,9 @@ normal
     height: 50px;
     text-align: center;
     border-radius: 15px;    
-    margin-top: 40px;
+    margin-top: 32px;
     margin-left: 100px;
+    margin-bottom: 2px;
 }
 #menu-buttons-reflex {
     background-color: lightgrey;
@@ -96,6 +97,7 @@ normal
     text-align: center;
     border-radius: 15px;
     margin-left: 100px;
+    margin-bottom: 2px;
 }
 #menu-buttons-race {
     background-color: lightgrey;
@@ -105,6 +107,7 @@ normal
     text-align: center;
     border-radius: 15px;
     margin-left: 100px;
+    margin-bottom: 2px;
 }
 #menu-buttons-help {
     background-color: lightgrey;
@@ -114,6 +117,7 @@ normal
     text-align: center;
     border-radius: 15px;
     margin-left: 100px;
+    margin-bottom: 2px;
 }
 #menu-buttons-exit {
     background-color: lightgrey;
@@ -123,6 +127,7 @@ normal
     text-align: center;
     border-radius: 15px;
     margin-left: 100px;
+    margin-bottom: 2px;
 }
 /*
 Hover
