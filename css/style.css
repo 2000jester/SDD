@@ -10,6 +10,9 @@ BG Colors
 #teach-body{
     background: #383838;
 }
+#race-body{
+    background: #383838;
+}
 /*
 Title Page
 */
@@ -214,4 +217,13 @@ Active
     height: 50px;
     text-align: center;
     border-radius: 15px;
+}
+/*
+Race Page
+*/
+#race-content-word{
+    color: white;
+    text-align: center;
+    font-family: "Helvetica", Helvetica, sans-serif;
+    font-size: 50px;
 }
