@@ -1,14 +1,14 @@
 var letters = [];
 var split = [];
 var count = 0;
-var currentLetter = 0; 
+var currentLetter = 0;
 function span(){
     split[currentLetter]="<span style='color:limegreen'>"+split[currentLetter]+"</span>";
-        document.getElementById("race-content-word").innerHTML = "";
-        for(var i = 0;i<split.length;i++){
-            document.getElementById("race-content-word").innerHTML = document.getElementById("race-content-word").innerHTML + split[i]
-        }
-        currentLetter = currentLetter + 1
+    document.getElementById("race-content-word").innerHTML = "";
+    for(var i = 0;i<split.length;i++){
+        document.getElementById("race-content-word").innerHTML = document.getElementById("race-content-word").innerHTML + split[i]
+    }
+    currentLetter = currentLetter + 1
 }
 function newWord(){
     randomTemp = random(0,words.length-1);
@@ -32,14 +32,12 @@ function onKeyDown(evt){
     }
     if(String.fromCharCode(evt.which).toLowerCase() == letters[currentLetter]){
         span()
-    } else if(String.fromCharCode(evt.which).toLowerCase() != letters[currentLetter]){
-        
     }
     if(currentLetter == letters.length){
         newWord();
         currentLetter = 0;
         count = count + 1
-        document.getElementById("race-content-count").innerHTML = count
+        document.getElementById("race-content-count").innerHTML = count + " words"
 
     }
 }
