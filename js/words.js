@@ -916,7 +916,6 @@ var words = [
 "truth",
 "try",
 "turn",
-"TV",
 "two",
 "type",
 "under",

@@ -24,21 +24,22 @@ function newWord(){
 }
 window.addEventListener('keydown', onKeyDown, false);
 function onKeyDown(evt){
-    if(evt.which == keys.enter){
+    if(evt.keyCode == keys.enter){
         if(isRunning === false){
             newWord();
             isRunning = true;
         }
     }
-    if(String.fromCharCode(evt.which).toLowerCase() == letters[currentLetter]){
+    if(String.fromCharCode(evt.keyCode).toLowerCase() == letters[currentLetter]){
         span()
     }
-    if(currentLetter == letters.length){
-        newWord();
-        currentLetter = 0;
-        count = count + 1
-        document.getElementById("race-content-count").innerHTML = count + " words"
-
+    if(isRunning==true){
+        if(currentLetter == letters.length){
+            newWord();
+            currentLetter = 0;
+            count = count + 1
+            document.getElementById("race-content-count").innerHTML = count + " words"
+        }
     }
 }
 
@@ -78,3 +79,24 @@ function random(min, max){
   var temp = Math.floor(Math.random() * (max - min + 1)) + min
   return temp
 }
+var timerElement = document.getElementById("race-content-timer")
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+
+    var interval = setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes; // single digit
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (timer-- < 0) {
+            timer = duration;
+            isRunning = false;
+            clearInterval(interval);
+        }
+    }, 1000);
+}
+startTimer(3, timerElement);
