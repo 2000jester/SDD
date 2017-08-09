@@ -3,6 +3,7 @@ var split = [];
 var count = 0;
 var currentLetter = 0;
 var wpm = 0;
+var wordsCount = 0;
 var secondsInvert = 0;
 function span(){
     split[currentLetter]="<span style='color:limegreen'>"+split[currentLetter]+"</span>";
@@ -31,20 +32,23 @@ function onKeyDown(evt){
             newWord();
             isRunning = true;
             startTimer(59, timerElement);
-            count = 0
-            wpm = 0
+            count = 0;
+            wpm = 0;
+            wordsCount = 0;
             secondsInvert = 0;
         }
     }
     if(String.fromCharCode(evt.keyCode).toLowerCase() == letters[currentLetter]){
-        span()
-        count = count + 1
-        document.getElementById("race-content-count").innerHTML = count + " characters"
+        span();
+        count = count + 1;
+        document.getElementById("race-content-count").innerHTML = count + " characters";
     }
     if(isRunning==true){
         if(currentLetter == letters.length){
             newWord();
             currentLetter = 0;
+            wordsCount = wordsCount + 1;
+            document.getElementById("race-content-words").innerHTML = wordsCount + " words";
         }
     }
 }
