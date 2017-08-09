@@ -8,12 +8,11 @@ var assigned_key = char_keys[random(0, char_keys.length-1)], // stores the rando
     prev_time = Date.now(), // stores previous time frame
     curr_time = Date.now(); // stores current time frame
 
-var display_key = document.getElementById('display-key'), // get the div element called "display-key"
-    display_reaction_time = document.getElementById('display-reaction-time'), // get the div element called "display-reaction-time"
-    display_timer = document.getElementById('display-timer');
-    display_key.innerHTML = String.fromCharCode(assigned_key); // puts the ASSIGNED KEY to a div element in the html page
-    display_timer.innerHTML = timer;
-    display_reaction_time.innerHTML = 0 + "ms"; // puts the REACTION TIME data on a div element in html page
+var reflex_key = document.getElementById('reflex-key'), // get the div element called "display-key"
+    reflex_reaction_time = document.getElementById('reflex-reaction-time'), // get the div element called "display-reaction-time"
+    reflex_timer = document.getElementById('reflex-timer');
+    reflex_key.innerHTML = String.fromCharCode(assigned_key); // puts the ASSIGNED KEY to a div element in the html page
+    reflex_reaction_time.innerHTML = 0 + "ms"; // puts the REACTION TIME data on a div element in html page
 // listen for keyDown event
 window.addEventListener('keydown', onKeyDown, false);
 function onKeyDown(evt) // contains the actions to perform if the keyDown event happens
@@ -28,14 +27,19 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
         console.log("correct key"); // log this message to suggest that the user is correct
 
         assigned_key = char_keys[random(0, char_keys.length-1)]; // choose random character from the array
-        display_key.innerHTML = String.fromCharCode(assigned_key); // display the assigned key to the screen
+        reflex_key.innerHTML = String.fromCharCode(assigned_key); // display the assigned key to the screen
         console.log(String.fromCharCode(assigned_key)); // log the entries
 
         reaction_time = (curr_time-prev_time)/1000; // calc reaction time after the correct key is pressed
-        display_reaction_time.innerHTML = reaction_time + "ms" //display the reaction time of the user
+        reflex_reaction_time.innerHTML = reaction_time + "ms" //display the reaction time of the user
         console.log(reaction_time); // log the entries
 
         prev_time = curr_time; // set previous time to the current time so that it calculates the current creation time
+    }
+
+    if(evt.keyCode == 32) // if user presses SPACE key
+    {
+        startTimer(3, reflex_timer); // start the timer with 3 seconds on clock in the div element called display-timer
     }
 }
 
@@ -44,22 +48,25 @@ function random(min, max) // generates a random integer WITHIN A CERTAIN RANGE o
     return Math.round(Math.random() * (max-min) + min); // algorithm that generates a random integer and returns it the system
 }
 
+function startTimer(duration, display)
+{
+    var time_limit = duration, minutes, seconds; //duration is seconds, create vars mins and secs 
 
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
+    var count_time = setInterval(function ()
+    {
+        minutes = parseInt(time_limit / 60, 10); // divide Date.now() + 3000 to secs
+        seconds = parseInt(time_limit % 60, 10); // modulo so that we get zero if the seconds is 60
 
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes; // pad a zero if the minutes is 1 to 9 else output the number
+        seconds = seconds < 10 ? "0" + seconds : seconds; // pad a zero if the seconds is 1 to 9 else output the number
 
-        minutes = minutes < 10 ? "0" + minutes : minutes; // single digit
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display_timer.textContent = minutes + ":" + seconds;
-
-        if (timer-- < 0) {
-            timer = duration;
+        display.textContent = minutes + ":" + seconds; //
+        
+        if (time_limit-- < 0) // decrement the timer in the if statement (VERY DODGEY)
+        { // but the reason for this is for the timer to stop if the timer reaches -1 so that the user see 00:00 not 00:01 at the end
+            clearInterval(count_time); // stop the timer if time limit reaches -1
+            display.innerHTML = "EXPIRED"; // message to the user
         }
-    }, 1000);
+    }, 1000) // run at 1000 ms/s
 }
-startTimer(3 * 60, display_timer);
+
