@@ -230,6 +230,10 @@ Race Page
 }
 #race-content-word{
     margin-top: 50px;
-    margin-botton: 50px;
+    margin-bottom: 50px;
 }
-#race-content-count
+#race-content-data{
+    margin-top: 13%;
+    margin-left: 5%;
+    float: left;
+}
