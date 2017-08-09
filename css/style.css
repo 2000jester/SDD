@@ -74,6 +74,7 @@ Menu Page
 */
 #menu-logo-container {
     float: right;
+    margin-right: 20px;
 }
 #menu-buttons {
     margin-top: 160px;
@@ -227,3 +228,8 @@ Race Page
     font-family: "Helvetica", Helvetica, sans-serif;
     font-size: 50px;
 }
+#race-content-word{
+    margin-top: 50px;
+    margin-botton: 50px;
+}
+#race-content-count

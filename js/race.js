@@ -2,6 +2,7 @@ var letters = [];
 var split = [];
 var count = 0;
 var currentLetter = 0;
+var wpm = 0;
 function span(){
     split[currentLetter]="<span style='color:limegreen'>"+split[currentLetter]+"</span>";
     document.getElementById("race-content-word").innerHTML = "";
@@ -28,6 +29,9 @@ function onKeyDown(evt){
         if(isRunning === false){
             newWord();
             isRunning = true;
+            startTimer(59, timerElement);
+            count = 0
+            wpm = 0
         }
     }
     if(String.fromCharCode(evt.keyCode).toLowerCase() == letters[currentLetter]){
@@ -77,9 +81,10 @@ var isRunning = false;
 
 function random(min, max){
   var temp = Math.floor(Math.random() * (max - min + 1)) + min
-  return temp
+  return temp;
 }
-var timerElement = document.getElementById("race-content-timer")
+var timerElement = document.getElementById("race-content-timer");
+console.log(timerElement)
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
 
@@ -91,12 +96,14 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = minutes + ":" + seconds;
+        document.getElementById("race-content-wpm").innerHTML = wpm + " wpm"
 
-        if (timer-- < 0) {
+        if (timer-- <= 0) {
             timer = duration;
             isRunning = false;
             clearInterval(interval);
+            display.textContent = "01:00";
+            document.getElementById("race-content-word").innerHTML = "Press Enter To Start"
         }
     }, 1000);
 }
-startTimer(3, timerElement);

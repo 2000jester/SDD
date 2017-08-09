@@ -533,8 +533,6 @@ var words = [
 "move",
 "movement",
 "movie",
-"Mr",
-"Mrs",
 "much",
 "music",
 "must",
