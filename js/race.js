@@ -87,7 +87,7 @@ function random(min, max){
 }
 var timerElement = document.getElementById("race-content-timer");
 console.log(timerElement)
-function startTimer(duration, display) {
+function startTimer(duration, display){
     var timer = duration, minutes, seconds;
 
     var interval = setInterval(function () {
@@ -100,7 +100,6 @@ function startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds;
         document.getElementById("race-content-wpm").innerHTML = wpm + " wpm";
         secondsInvert = 60 - seconds
-        console.log(secondsInvert)
         wpm = count/5
 
         if (timer-- <= 0) {
