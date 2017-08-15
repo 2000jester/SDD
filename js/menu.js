@@ -1,0 +1,1 @@
+document.getElementById("menu-name-container").value = document.getElementById("menu-name-container").value + username
