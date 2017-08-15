@@ -13,13 +13,13 @@ var reflex_key = document.getElementById('reflex-key'), // get the div element c
     reflex_timer = document.getElementById('reflex-timer');
     reflex_key.innerHTML = String.fromCharCode(assigned_key); // puts the ASSIGNED KEY to a div element in the html page
     reflex_reaction_time.innerHTML = 0 + "ms"; // puts the REACTION TIME data on a div element in html page
-    isTimerRunning = false;
+var isTimerRunning = false, isTimerActivated = false;
 // listen for keyDown event
 window.addEventListener('keydown', onKeyDown, false);
 function onKeyDown(evt) // contains the actions to perform if the keyDown event happens
 {
 
-    if(evt.keyCode == assigned_key && reflex_timer.innerHTML == 0) // is the KEY PRESSED correct?
+    if(evt.keyCode == assigned_key && !isTimerRunning && isTimerActivated) // is the KEY PRESSED correct?
     {
         curr_time = Date.now(); // set the time this date 
         //(which is used to find the different between the previous time and the current time)
@@ -43,12 +43,13 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
     {
         prev_time = Date.now();
         isTimerRunning = false;
+        isTimerActivated = true;
     }
 
     if(evt.keyCode == 13 && !isTimerRunning) // IF user presses ENTER KEY
     {
         isTimerRunning = true;
-        startTimer(3, reflex_timer);
+        startTimer(timer, reflex_timer);
     }
     console.log(timer);
     console.log("key match: " + key_match)
