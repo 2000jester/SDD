@@ -13,16 +13,16 @@ var reflex_key = document.getElementById('reflex-key'), // get the div element c
     reflex_timer = document.getElementById('reflex-timer');
     reflex_key.innerHTML = String.fromCharCode(assigned_key); // puts the ASSIGNED KEY to a div element in the html page
     reflex_reaction_time.innerHTML = 0 + "ms"; // puts the REACTION TIME data on a div element in html page
+    isTimerRunning = false;
 // listen for keyDown event
 window.addEventListener('keydown', onKeyDown, false);
 function onKeyDown(evt) // contains the actions to perform if the keyDown event happens
 {
 
-    if(evt.keyCode == assigned_key) // is the KEY PRESSED correct?
+    if(evt.keyCode == assigned_key && reflex_timer.innerHTML == 0) // is the KEY PRESSED correct?
     {
         curr_time = Date.now(); // set the time this date 
         //(which is used to find the different between the previous time and the current time)
-
         key_match = true; // if the key PRESSED matches the correct key then log this entry
         console.log("correct key"); // log this message to suggest that the user is correct
 
@@ -36,12 +36,25 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
 
         prev_time = curr_time; // set previous time to the current time so that it calculates the current creation time
     }
-
-    if(evt.keyCode == 32) // if user presses SPACE key
+        //FIXME: prevent the timer from resetting when you press the right key
+        //startTimer(3, reflex_timer);
+        // start the timer with 3 seconds on clock in the div element called display-timer
+    if(reflex_timer.innerHTML == 0)
     {
-        startTimer(3, reflex_timer); // start the timer with 3 seconds on clock in the div element called display-timer
+        prev_time = Date.now();
+        isTimerRunning = false;
     }
+
+    if(evt.keyCode == 13 && !isTimerRunning) // IF user presses ENTER KEY
+    {
+        isTimerRunning = true;
+        startTimer(3, reflex_timer);
+    }
+    console.log(timer);
+    console.log("key match: " + key_match)
 }
+
+window.addEventListener('keydown', onKeyDown, false);
 
 function random(min, max) // generates a random integer WITHIN A CERTAIN RANGE of values
 {
@@ -60,12 +73,15 @@ function startTimer(duration, display)
         minutes = minutes < 10 ? "0" + minutes : minutes; // pad a zero if the minutes is 1 to 9 else output the number
         seconds = seconds < 10 ? "0" + seconds : seconds; // pad a zero if the seconds is 1 to 9 else output the number
 
-        display.textContent = minutes + ":" + seconds; //
+        display.textContent = minutes + ":" + seconds;
         
-        if (time_limit-- < 0) // decrement the timer in the if statement (VERY DODGEY)
+        time_limit--;
+        if (time_limit < 0) // decrement the timer in the if statement (VERY DODGEY)
         { // but the reason for this is for the timer to stop if the timer reaches -1 so that the user see 00:00 not 00:01 at the end
             clearInterval(count_time); // stop the timer if time limit reaches -1
-            display.innerHTML = "EXPIRED"; // message to the user
+            reflex_timer.innerHTML = 0
+            prev_time = Date.now();
+             // message to the user
         }
     }, 1000) // run at 1000 ms/s
 }
