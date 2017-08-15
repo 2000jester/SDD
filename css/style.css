@@ -222,6 +222,9 @@ Active
 /*
 Race Page
 */
+#race-body{
+    padding: 10px;
+}
 #race-content-container{
     color: white;
     text-align: center;
@@ -230,6 +233,50 @@ Race Page
 }
 #race-content-word{
     margin-top: 50px;
-    margin-botton: 50px;
+    margin-bottom: 50px;
 }
-#race-content-count
+#race-content-data{
+    padding-top: 13%;
+    padding-bottom: 13%;
+    padding-left: 5%;
+    padding-right: 5%;
+    float: left;
+    background-color: grey;
+}
+#race-content-prompt{
+    padding-top: 17%
+}
+/*
+Normal
+*/
+#race-buttons-back {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 10%;
+}
+/*
+Hover
+*/
+#race-buttons-back:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+/*
+Active
+*/
+#race-buttons-back:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
