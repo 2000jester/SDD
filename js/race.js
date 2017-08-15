@@ -39,16 +39,18 @@ function onKeyDown(evt){
         }
     }
     if(String.fromCharCode(evt.keyCode).toLowerCase() == letters[currentLetter]){
-        span();
-        count = count + 1;
-        document.getElementById("race-content-count").innerHTML ="characters : "+count;
+        if(isRunning === true){
+            span();
+            count = count + 1;
+            document.getElementById("race-content-count").innerHTML ="Characters : "+count;
+        }
     }
     if(isRunning==true){
         if(currentLetter == letters.length){
             newWord();
             currentLetter = 0;
             wordsCount = wordsCount + 1;
-            document.getElementById("race-content-words").innerHTML ="words : "+wordsCount;
+            document.getElementById("race-content-words").innerHTML ="Words : "+wordsCount;
         }
     }
 }
@@ -101,8 +103,8 @@ function startTimer(duration, display){
         minutes = minutes < 10 ? "0" + minutes : minutes; // single digit
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
-        document.getElementById("race-content-wpm").innerHTML ="wpm : "+wpm;
+        display.textContent = "Timer : "+minutes + ":" + seconds;
+        document.getElementById("race-content-wpm").innerHTML ="Wpm : "+wpm;
         secondsInvert = 60 - seconds
         wpm = count/5
 
