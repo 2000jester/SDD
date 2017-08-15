@@ -233,7 +233,10 @@ Race Page
     margin-bottom: 50px;
 }
 #race-content-data{
-    margin-top: 13%;
-    margin-left: 5%;
+    padding-top: 13%;
+    padding-left: 5%;
     float: left;
+}
+#race-content-prompt{
+    padding-top: 17%
 }

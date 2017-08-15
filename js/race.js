@@ -41,14 +41,14 @@ function onKeyDown(evt){
     if(String.fromCharCode(evt.keyCode).toLowerCase() == letters[currentLetter]){
         span();
         count = count + 1;
-        document.getElementById("race-content-count").innerHTML = count + " characters";
+        document.getElementById("race-content-count").innerHTML ="characters : "+count;
     }
     if(isRunning==true){
         if(currentLetter == letters.length){
             newWord();
             currentLetter = 0;
             wordsCount = wordsCount + 1;
-            document.getElementById("race-content-words").innerHTML = wordsCount + " words";
+            document.getElementById("race-content-words").innerHTML ="words : "+wordsCount;
         }
     }
 }
@@ -102,7 +102,7 @@ function startTimer(duration, display){
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = minutes + ":" + seconds;
-        document.getElementById("race-content-wpm").innerHTML = wpm + " wpm";
+        document.getElementById("race-content-wpm").innerHTML ="wpm : "+wpm;
         secondsInvert = 60 - seconds
         wpm = count/5
 
