@@ -21,7 +21,7 @@ Title Page
     width: 100px;
     height: 50px;
     color: black;
-    margin-top: 100px;
+    margin-top: 3%;
     border-radius:15px;
 }
 #title-proceed-button:active {
@@ -36,7 +36,10 @@ Title Page
     background-color: grey;
     color: white;
     border-radius:15px;
-
+}
+#title-name-prompt{
+    color: white;
+    font-family: "Helvetica", Helvetica, sans-serif;
 }
 /*
 Teach Page
