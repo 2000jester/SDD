@@ -13,6 +13,9 @@ BG Colors
 #race-body{
     background: #383838;
 }
+#reflex-body{
+    background: #383838;
+}
 /*
 Title Page
 */
@@ -287,3 +290,7 @@ Active
 /*
 Relfex Page 
 */
+#reflex-text-container{
+    color: white;
+    font-family: "Helvetica", Helvetica, sans-serif;
+}
