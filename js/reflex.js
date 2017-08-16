@@ -5,21 +5,24 @@ var assigned_key = char_keys[random(0, char_keys.length-1)], // stores the rando
     reaction_time, // stores the reaction time of the player
     key_match = false, // bool switch to see if the player pressed the right key
     timer = Date.now() + 3000, //set timer to 3 secs
+    timer_limit = 1,
     prev_time = Date.now(), // stores previous time frame
     curr_time = Date.now(); // stores current time frame
 
 var reflex_key = document.getElementById('reflex-key'), // get the div element called "display-key"
     reflex_reaction_time = document.getElementById('reflex-reaction-time'), // get the div element called "display-reaction-time"
     reflex_timer = document.getElementById('reflex-timer');
-    reflex_key.innerHTML = String.fromCharCode(assigned_key); // puts the ASSIGNED KEY to a div element in the html page
-    reflex_reaction_time.innerHTML = 0 + "ms"; // puts the REACTION TIME data on a div element in html page
-var isTimerRunning = false, isTimerActivated = false;
+
+    // if timer is activated once allow the key listener to perform actions
+var isTimerRunning = false, isTimerActivated = false; // timer booleans
+    // if timer is NOT running allow key listener to perform actions
+
 // listen for keyDown event
 window.addEventListener('keydown', onKeyDown, false);
 function onKeyDown(evt) // contains the actions to perform if the keyDown event happens
 {
 
-    if(evt.keyCode == assigned_key && !isTimerRunning && isTimerActivated) // is the KEY PRESSED correct?
+    if(evt.keyCode == assigned_key && isTimerActivated && !isTimerRunning) // is the KEY PRESSED correct?
     {
         curr_time = Date.now(); // set the time this date 
         //(which is used to find the different between the previous time and the current time)
@@ -35,27 +38,20 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
         console.log(reaction_time); // log the entries
 
         prev_time = curr_time; // set previous time to the current time so that it calculates the current creation time
-    }
-        //FIXME: prevent the timer from resetting when you press the right key
-        //startTimer(3, reflex_timer);
-        // start the timer with 3 seconds on clock in the div element called display-timer
-    if(reflex_timer.innerHTML == 0)
-    {
-        prev_time = Date.now();
+        isTimerActivated = false;
         isTimerRunning = false;
-        isTimerActivated = true;
     }
 
     if(evt.keyCode == 13 && !isTimerRunning) // IF user presses ENTER KEY
     {
-        isTimerRunning = true;
-        startTimer(timer, reflex_timer);
+
+        isTimerRunning = true; // TIMER IS RUNNING
+        startTimer(3, reflex_timer); // set time to 3 secs and put it in the reflex_timer div
+        key_match = false; // reset keymatch variable
     }
     console.log(timer);
     console.log("key match: " + key_match)
 }
-
-window.addEventListener('keydown', onKeyDown, false);
 
 function random(min, max) // generates a random integer WITHIN A CERTAIN RANGE of values
 {
@@ -80,8 +76,12 @@ function startTimer(duration, display)
         if (time_limit < 0) // decrement the timer in the if statement (VERY DODGEY)
         { // but the reason for this is for the timer to stop if the timer reaches -1 so that the user see 00:00 not 00:01 at the end
             clearInterval(count_time); // stop the timer if time limit reaches -1
-            reflex_timer.innerHTML = 0
-            prev_time = Date.now();
+            timer_limit = 0; // set time_limit to zero
+            isTimerRunning = false; // flip timer is running true
+            isTimerActivated = true; // flip this switch true
+            reflex_timer.innerHTML = "" // reset the reflex_timer div
+            reflex_key.innerHTML = String.fromCharCode(assigned_key); // puts the ASSIGNED KEY to a div element in the html page
+            prev_time = Date.now(); // set date to now 
              // message to the user
         }
     }, 1000) // run at 1000 ms/s
