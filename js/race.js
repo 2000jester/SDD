@@ -1,6 +1,6 @@
 var letters = [];//Array to hold letters of current word, used for logic checks because it wont have span tags
 var lettersColor = [];//Array to hold letters with span tags with a color attribute
-var count = 0;//Count for amount of characters typed score
+var letterCount = 0;//Count for amount of characters typed score
 var currentLetter = 0;//Count for which letter the user is currently required to type relative to the current word
 var wpm = 0;//Count for WPM score
 var wordsCount = 0;//Count for amount of words typed score
@@ -23,22 +23,22 @@ function newWord(){//called when the user completes typing a word
     }
 }
 window.addEventListener('keydown', onKeyDown, false);//adds an event listener to the html body 
-function onKeyDown(evt){
-    if(evt.keyCode == keys.enter){
-        if(isRunning === false){
-            newWord();
-            isRunning = true;
-            startTimer(59, timerElement);
-            count = 0;
-            wpm = 0;
-            wordsCount = 0;
+function onKeyDown(evt){//function that is called when the keyDown event listener is triggered
+    if(evt.keyCode == keys.enter){//checks if the key pressed was enter
+        if(isRunning === false){//checks if the race game is currently running
+            newWord();//calls new word function
+            isRunning = true;//sets the boolean to equal true
+            startTimer(59, timerElement);//starts timer countdown
+            letterCount = 0;//resets letter count to zero
+            wpm = 0;//resets wpm to zero
+            wordsCount = 0;//resets word count to zero
         }
     }
     if(String.fromCharCode(evt.keyCode).toLowerCase() == letters[currentLetter]){
         if(isRunning === true){
             span();
-            count = count + 1;
-            document.getElementById("race-content-count").innerHTML ="Characters : "+count;
+            letterCount = letterCount + 1;
+            document.getElementById("race-content-count").innerHTML ="Characters : "+letterCount;
         }
     }
     if(isRunning==true){
@@ -100,7 +100,7 @@ function startTimer(duration, display){
         display.textContent = "Timer : "+minutes + ":" + seconds;
         document.getElementById("race-content-wpm").innerHTML ="Wpm : "+wpm;
         //secondsInvert = 60 - seconds
-        wpm = count/5
+        wpm = letterCount/5
 
         if (timer-- <= 0) {
             timer = duration;
