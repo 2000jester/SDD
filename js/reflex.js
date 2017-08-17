@@ -11,7 +11,7 @@ var assigned_key = char_keys[random(0, char_keys.length-1)], // stores the rando
 
 var reflex_key = document.getElementById('reflex-key'), // get the div element called "display-key"
     reflex_reaction_time = document.getElementById('reflex-reaction-time'), // get the div element called "display-reaction-time"
-    reflex_timer = document.getElementById('reflex-timer');
+    reflex_timer = document.getElementById('reflex-single');
 
     // if timer is activated once allow the key listener to perform actions
 var isTimerRunning = false, isTimerActivated = false; // timer booleans
@@ -64,13 +64,19 @@ function startTimer(duration, display)
 
     var count_time = setInterval(function ()
     {
-        minutes = parseInt(time_limit / 60, 10); // divide Date.now() + 3000 to secs
         seconds = parseInt(time_limit % 60, 10); // modulo so that we get zero if the seconds is 60
-
-        minutes = minutes < 10 ? "0" + minutes : minutes; // pad a zero if the minutes is 1 to 9 else output the number
         seconds = seconds < 10 ? "0" + seconds : seconds; // pad a zero if the seconds is 1 to 9 else output the number
 
-        display.textContent = minutes + ":" + seconds;
+        var tempSecondsSplit = seconds.split("");//splits seconds so that a one digit value can be displayed
+        display.textContent = tempSecondsSplit[1];//sets the elements text to equal the temp value
+        if(tempSecondsSplit[1] == "3"){
+            document.getElementById("reflex-single").style.color = "red";
+        } else if(tempSecondsSplit[1] == "2"){
+            document.getElementById("reflex-single").style.color = "orange";
+        } else if(tempSecondsSplit[1] == "1"){
+            document.getElementById("reflex-single").style.color = "limegreen";
+        }
+        document.getElementById("reflex-single").style.marginRight = "88%";//re aligns the text
         
         time_limit--;
         if (time_limit < 0) // decrement the timer in the if statement (VERY DODGEY)

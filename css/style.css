@@ -306,6 +306,30 @@ Relfex Page
     color: white;
     font-family: "Helvetica", Helvetica, sans-serif;
 }
+#reflex-content {
+    float: right;
+    margin-right: 18%;
+    margin-top: 23%;
+    font-size: 50px;
+}
+#reflex-stats {
+    float: left;
+    padding-left: 8%;
+    padding-top: 10.5%;
+    padding-bottom: 10.5%;
+    padding-right: 8%;
+    margin-top: 12%;
+    margin-bottom: 12%;
+    margin-left: 7%;
+    background: grey;
+    font-size: 30px;
+}
+#reflex-stats-last {
+    margin-bottom: 5px;
+}
+#reflex-stats-best {
+    margin-bottom: 5px;
+}
 /*
 Help Page
 */
@@ -405,4 +429,5 @@ Active
     text-align: center;
     border-radius: 15px;    
 }
+
 
