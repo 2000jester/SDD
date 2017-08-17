@@ -16,6 +16,18 @@ BG Colors
 #reflex-body{
     background: #383838;
 }
+#help-body{
+    background: #383838;
+}
+#help-race-body{
+    background: #383838;
+}
+#help-reflex-body{
+    background: #383838;
+}
+#help-teach-body{
+    background: #383838;
+}
 /*
 Title Page
 */
@@ -294,3 +306,95 @@ Relfex Page
     color: white;
     font-family: "Helvetica", Helvetica, sans-serif;
 }
+/*
+Help Page
+*/
+#help-text{
+    font-size: 30px;
+    color: white;
+    font-family: "Helvetica", Helvetica, sans-serif
+}
+#help-buttons-container{
+    margin-top: 10%;
+}
+/*
+Normal
+*/
+#help-buttons-teach {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+#help-buttons-race {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+#help-buttons-reflex {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+/*
+Hover
+*/
+#help-buttons-teach:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+#help-buttons-race:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+#help-buttons-reflex:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+/*
+Active
+*/
+#help-buttons-teach:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}#help-buttons-race:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+#help-buttons-reflex:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+
