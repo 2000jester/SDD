@@ -7,11 +7,13 @@ var assigned_key = char_keys[random(0, char_keys.length-1)], // stores the rando
     timer = Date.now() + 3000, //set timer to 3 secs
     timer_limit = 1,
     prev_time = Date.now(), // stores previous time frame
-    curr_time = Date.now(); // stores current time frame
+    curr_time = Date.now(), // stores current time frame
+    bestReaction_time=0; //store the players best reaction time
 
-var reflex_key = document.getElementById('reflex-key'), // get the div element called "display-key"
-    reflex_reaction_time = document.getElementById('reflex-reaction-time'), // get the div element called "display-reaction-time"
-    reflex_timer = document.getElementById('reflex-single');
+var reflex_key = document.getElementById('reflex-single'), // get the div element called "reflex-single"
+    reflex_reaction_time = document.getElementById('reflex-stats-last'), // get the div element called "reflex-stats-last"
+    reflex_timer = document.getElementById('reflex-single'), //get the div element called "reflex-single"
+    reflex_best_reaction_time = document.getElementById('reflex-stats-best'); // get the div element called "reflex-stats-best"
 
     // if timer is activated once allow the key listener to perform actions
 var isTimerRunning = false, isTimerActivated = false; // timer booleans
@@ -30,11 +32,19 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
         console.log("correct key"); // log this message to suggest that the user is correct
 
         assigned_key = char_keys[random(0, char_keys.length-1)]; // choose random character from the array
-        reflex_key.innerHTML = String.fromCharCode(assigned_key); // display the assigned key to the screen
+        document.getElementById("reflex-single").style.marginRight = "17%";//re aligns the text
+        document.getElementById("reflex-single").style.marginRight = "0px";//re aligns the text
+        reflex_key.innerHTML = "Press Enter To Start"; // display the assigned key to the screen
         console.log(String.fromCharCode(assigned_key)); // log the entries
 
         reaction_time = (curr_time-prev_time)/1000; // calc reaction time after the correct key is pressed
-        reflex_reaction_time.innerHTML = reaction_time + "ms" //display the reaction time of the user
+        if(bestReaction_time == 0){
+            bestReaction_time = reaction_time;
+        } else if(reaction_time < bestReaction_time){
+            bestReaction_time = reaction_time;
+        }
+        reflex_reaction_time.innerHTML = "Last : "+reaction_time + " ms" //display the reaction time of the user
+        reflex_best_reaction_time.innerHTML = "Best : "+bestReaction_time+ " ms" //display the reaction time of the user
         console.log(reaction_time); // log the entries
 
         prev_time = curr_time; // set previous time to the current time so that it calculates the current creation time
@@ -80,7 +90,7 @@ function startTimer(duration, display)
                 document.getElementById("reflex-single").style.color = "limegreen";
                 break;
         }
-        document.getElementById("reflex-single").style.marginRight = "88%";//re aligns the text
+        document.getElementById("reflex-single").style.marginRight = "230px";//re aligns the text
         
         time_limit--;
         if (time_limit < 0) // decrement the timer in the if statement (VERY DODGEY)
@@ -90,6 +100,7 @@ function startTimer(duration, display)
             isTimerRunning = false; // flip timer is running true
             isTimerActivated = true; // flip this switch true
             reflex_timer.innerHTML = "" // reset the reflex_timer div
+            document.getElementById("reflex-single").style.color = "white";//resets the color to white
             reflex_key.innerHTML = String.fromCharCode(assigned_key); // puts the ASSIGNED KEY to a div element in the html page
             prev_time = Date.now(); // set date to now 
              // message to the user
