@@ -1,31 +1,28 @@
-var letters = [];
-var split = [];
-var count = 0;
-var currentLetter = 0;
-var wpm = 0;
-var wordsCount = 0;
-var secondsInvert = 0;
-function span(){
-    split[currentLetter]="<span style='color:limegreen'>"+split[currentLetter]+"</span>";
-    document.getElementById("race-content-word").innerHTML = "";
-    for(var i = 0;i<split.length;i++){
-        document.getElementById("race-content-word").innerHTML = document.getElementById("race-content-word").innerHTML + split[i]
+var letters = [];//Array to hold letters of current word, used for logic checks because it wont have span tags
+var lettersColor = [];//Array to hold letters with span tags with a color attribute
+var count = 0;//Count for amount of characters typed score
+var currentLetter = 0;//Count for which letter the user is currently required to type relative to the current word
+var wpm = 0;//Count for WPM score
+var wordsCount = 0;//Count for amount of words typed score
+var isRunning = false;//Boolean to check if the user is currently "racing"
+function span(){//called when the user types the required letter correctly
+    lettersColor[currentLetter]="<span style='color:limegreen'>"+lettersColor[currentLetter]+"</span>";//adds span tags with green color
+    document.getElementById("race-content-word").innerHTML = "";//resets what was currently stored in the elements innerHTML
+    for(var i = 0;i<lettersColor.length;i++){//for loop that loops through the length of lettersColor
+        document.getElementById("race-content-word").innerHTML = document.getElementById("race-content-word").innerHTML + lettersColor[i]//concatenates all letters from the lettersColor array to the text element
     }
-    currentLetter = currentLetter + 1
+    currentLetter = currentLetter + 1//increments the current letter count by one
 }
-function newWord(){
-    randomTemp = random(0,words.length-1);
-    split = words[randomTemp].split("");
-    letters = words[randomTemp].split("");
-    for(var i = 0; i<split.length;i++){
-        split[i]="<span>"+split[i]+"</span>";
-    }
-    document.getElementById("race-content-word").innerHTML = "";
-    for(var i = 0;i<split.length;i++){
-        document.getElementById("race-content-word").innerHTML = document.getElementById("race-content-word").innerHTML + split[i]
+function newWord(){//called when the user completes typing a word
+    randomTemp = random(0,words.length-1);//temporary random value with a min of 0 and a max of the length of the words array stored in "./words.js"
+    lettersColor = words[randomTemp].split("");//sets lettersColor array equal to the word located at the random value index for span purposes
+    letters = words[randomTemp].split("");//sets lettersColor array equal to the word located at the random value index for logic check purposes
+    document.getElementById("race-content-word").innerHTML = "";//resets what was currently stored in the elements innerHTML
+    for(var i = 0;i<lettersColor.length;i++){//for loop that loops through the length of lettersColor
+        document.getElementById("race-content-word").innerHTML = document.getElementById("race-content-word").innerHTML + lettersColor[i]//concatenates all letters from the lettersColor array to the text element
     }
 }
-window.addEventListener('keydown', onKeyDown, false);
+window.addEventListener('keydown', onKeyDown, false);//adds an event listener to the html body 
 function onKeyDown(evt){
     if(evt.keyCode == keys.enter){
         if(isRunning === false){
@@ -35,7 +32,6 @@ function onKeyDown(evt){
             count = 0;
             wpm = 0;
             wordsCount = 0;
-            secondsInvert = 0;
         }
     }
     if(String.fromCharCode(evt.keyCode).toLowerCase() == letters[currentLetter]){
@@ -85,8 +81,6 @@ var keys={
     y: 89,
     z: 90,
 }
-var isRunning = false;
-
 function random(min, max){
   var temp = Math.floor(Math.random() * (max - min + 1)) + min
   return temp;
@@ -105,7 +99,7 @@ function startTimer(duration, display){
 
         display.textContent = "Timer : "+minutes + ":" + seconds;
         document.getElementById("race-content-wpm").innerHTML ="Wpm : "+wpm;
-        secondsInvert = 60 - seconds
+        //secondsInvert = 60 - seconds
         wpm = count/5
 
         if (timer-- <= 0) {
