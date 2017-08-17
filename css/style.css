@@ -10,6 +10,12 @@ BG Colors
 #teach-body{
     background: #383838;
 }
+#teach_video-body {
+    background: #383838;
+}
+#teach_text-body {
+    background: #383838;
+}
 #race-body{
     background: #383838;
 }
@@ -31,6 +37,9 @@ BG Colors
 /*
 Title Page
 */
+/*
+Normal
+*/
 #title-proceed-button {
     background-color: lightgrey;
     width: 100px;
@@ -39,6 +48,18 @@ Title Page
     margin-top: 3%;
     border-radius:15px;
 }
+/*
+Hover
+*/
+#title-proceed-button:hover {
+    cursor: pointer;
+    background-color: grey;
+    color: white;
+    border-radius:15px;
+}
+/*
+Active
+*/
 #title-proceed-button:active {
     background-color: black;
     width: 100px;
@@ -46,26 +67,12 @@ Title Page
     color: white;
     border-radius:15px;
 }
-#title-proceed-button:hover {
-    cursor: pointer;
-    background-color: grey;
-    color: white;
-    border-radius:15px;
-}
-#title-name-prompt{
-    color: white;
-    font-family: "Helvetica", Helvetica, sans-serif;
-    font-size: 15px;
-}
 /*
 Teach Page
 */
-#teach-video-container {
-    width: 90%;
-}
-#teach-button-container{
-    height:100%;
-}
+/*
+Normal
+*/
 #teach-button-back {
     width: 100px;
     height: 50px;
@@ -74,6 +81,25 @@ Teach Page
     margin-top: 20px;
     margin-left: 10px;
 }
+#teach-button-video {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+#teach-button-text {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+/*
+Hover
+*/
 #teach-button-back:hover {
     cursor: pointer;
     text-align: center;
@@ -81,7 +107,78 @@ Teach Page
     color: white;
     border-radius: 15px;
 }
+/*
+Active
+*/
 #teach-button-back:active {
+    cursor: pointer;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+/*
+teach-video page
+*/
+/*
+Normal
+*/
+#teach_video-button-back {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+/*
+Hover
+*/
+#teach_video-button-back:hover {
+    cursor: pointer;
+    text-align: center;
+    background-color: grey;
+    color: white;
+    border-radius: 15px;
+}
+/*
+Active
+*/
+#teach_video-button-back:active {
+    cursor: pointer;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+/*
+teach-text page
+*/
+/*
+Normal
+*/
+#teach_text-button-back {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+/*
+Hover
+*/
+#teach_text-button-back:hover {
+    cursor: pointer;
+    text-align: center;
+    background-color: grey;
+    color: white;
+    border-radius: 15px;
+}
+/*
+Active
+*/
+#teach_text-button-back:active {
     cursor: pointer;
     text-align: center;
     background-color: black;
