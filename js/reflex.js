@@ -69,6 +69,25 @@ function startTimer(duration, display)
 
         var tempSecondsSplit = seconds.split("");//splits seconds so that a one digit value can be displayed
         display.textContent = tempSecondsSplit[1];//sets the elements text to equal the temp value
+    
+        // the switch statement is always watching you 0_0
+        /*
+        switch(tempSecondsSplit[1])
+        {
+            case (tempSecondsSplit[1] == 3):
+            {
+                document.getElementById("reflex-single").style.color = "red";
+            }
+            case (tempSecondsSplit[1] == 2):
+            {
+                document.getElementById("reflex-single").style.color = "orange";
+            }
+            case (tempSecondsSplit[1] == 1):
+            {
+                document.getElementById("reflex-single").style.color = "limegreen";
+            }
+        }*/
+        
         if(tempSecondsSplit[1] == "3"){
             document.getElementById("reflex-single").style.color = "red";
         } else if(tempSecondsSplit[1] == "2"){
@@ -76,6 +95,7 @@ function startTimer(duration, display)
         } else if(tempSecondsSplit[1] == "1"){
             document.getElementById("reflex-single").style.color = "limegreen";
         }
+        
         document.getElementById("reflex-single").style.marginRight = "88%";//re aligns the text
         
         time_limit--;
