@@ -34,24 +34,24 @@ function onKeyDown(evt){//function that is called when the keyDown event listene
             wordsCount = 0;//resets word count to zero
         }
     }
-    if(String.fromCharCode(evt.keyCode).toLowerCase() == letters[currentLetter]){
-        if(isRunning === true){
-            span();
-            letterCount = letterCount + 1;
-            document.getElementById("race-content-count").innerHTML ="Characters : "+letterCount;
+    if(String.fromCharCode(evt.keyCode).toLowerCase() == letters[currentLetter]){//checks if the event listener keyCode matches the required key
+        if(isRunning === true){//checks if the race game is running
+            span();//calls span function
+            letterCount = letterCount + 1;//increments letter count
+            document.getElementById("race-content-count").innerHTML ="Characters : "+letterCount;//updates the letter count element
         }
     }
-    if(isRunning==true){
-        if(currentLetter == letters.length){
-            newWord();
-            currentLetter = 0;
-            wordsCount = wordsCount + 1;
-            document.getElementById("race-content-words").innerHTML ="Words : "+wordsCount;
+    if(isRunning==true){//checks if the race game is running
+        if(currentLetter == letters.length){//checks if the word has been completed
+            newWord();//calls new word function 
+            currentLetter = 0;//sets current letter index to 0
+            wordsCount = wordsCount + 1;//increments the word count by 1
+            document.getElementById("race-content-words").innerHTML ="Words : "+wordsCount;//updates the word cont element
         }
     }
 }
 
-var keys={
+var keys={//array to store keys and their corresponding keycode
     enter: 13,
     space: 32,
     a: 65,
@@ -81,12 +81,14 @@ var keys={
     y: 89,
     z: 90,
 }
-function random(min, max){
-  var temp = Math.floor(Math.random() * (max - min + 1)) + min
-  return temp;
+function random(min, max){//function to provide a random whole number between a min and max
+  var temp = Math.floor(Math.random() * (max - min + 1)) + min//generates random number between min and max and then floors it
+  return temp;//returns the number
 }
-var timerElement = document.getElementById("race-content-timer");
-console.log(timerElement)
+var timerElement = document.getElementById("race-content-timer");//gets and stores the element that the timer is displayed on
+//-----------------------------------------------------------
+// SEE REFLEX HTML FOR COMMENTS REGARDING STARTTIMER FUNCTION
+//-----------------------------------------------------------
 function startTimer(duration, display){
     var timer = duration, minutes, seconds;
 
