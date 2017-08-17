@@ -309,10 +309,17 @@ Relfex Page
 /*
 Help Page
 */
+#help-body{
+    margin: 25px;
+}
 #help-text{
     font-size: 30px;
     color: white;
-    font-family: "Helvetica", Helvetica, sans-serif
+    width: 1000px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "Helvetica", Helvetica, sans-serif;
+    background: grey;
 }
 #help-buttons-container{
     margin-top: 10%;
@@ -381,7 +388,8 @@ Active
     height: 50px;
     text-align: center;
     border-radius: 15px;    
-}#help-buttons-race:active {
+}
+#help-buttons-race:active {
     background-color: black;
     color: white;
     width: 100px;
