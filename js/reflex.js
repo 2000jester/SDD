@@ -48,8 +48,8 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
         console.log(reaction_time); // log the entries
 
         prev_time = curr_time; // set previous time to the current time so that it calculates the current creation time
-        isTimerActivated = false;
-        isTimerRunning = false;
+        isTimerActivated = false; // reset timer activation
+        isTimerRunning = false; // reset if timer running
     }
 
     if(evt.keyCode == 13 && !isTimerRunning) // IF user presses ENTER KEY
@@ -80,7 +80,7 @@ function startTimer(duration, display)
         var tempSecondsSplit = seconds.split("");//splits seconds so that a one digit value can be displayed
         display.textContent = tempSecondsSplit[1];//sets the elements text to equal the temp value
         switch(tempSecondsSplit[1]){//switch statement that selects the text color based on what number it is
-            case "3":
+            case "3": 
                 document.getElementById("reflex-single").style.color = "red";
                 break;
             case "2":
