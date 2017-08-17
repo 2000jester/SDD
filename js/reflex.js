@@ -38,10 +38,10 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
         console.log(String.fromCharCode(assigned_key)); // log the entries
 
         reaction_time = (curr_time-prev_time)/1000; // calc reaction time after the correct key is pressed
-        if(bestReaction_time == 0){
-            bestReaction_time = reaction_time;
-        } else if(reaction_time < bestReaction_time){
-            bestReaction_time = reaction_time;
+        if(bestReaction_time == 0){// if a best time hasnt been set
+            bestReaction_time = reaction_time; //set best time to last time
+        } else if(reaction_time < bestReaction_time){ //if last time is better (less than) than best time
+            bestReaction_time = reaction_time;//set best time to last time
         }
         reflex_reaction_time.innerHTML = "Last : "+reaction_time + " ms" //display the reaction time of the user
         reflex_best_reaction_time.innerHTML = "Best : "+bestReaction_time+ " ms" //display the reaction time of the user
