@@ -7,12 +7,6 @@
         <script src="../js/menu.js"></script>
     </head>
     <body id="menu-body">
-        <script language="javascript" type="text/javascript">
-            function windowClose() {
-                window.open('','_parent','');
-                window.close();
-            }
-        </script>
         <div id="menu-logo-container">
             <center>
                 <img id="menu-logo" src="../Resources/logo.png"></img>
@@ -32,7 +26,7 @@
                 <button type="button" id="menu-buttons-help" onclick="window.location.href='help.html'">Help</button>
             </div>
             <div id="menu-buttons-exit-container">
-                <button type="button" id="menu-buttons-exit" target="_blank" onclick="windowClose();">Exit</button>
+                <button type="button" id="menu-buttons-exit" onclick="window.close()">Exit</button>
             </div>
         </div>
     </body>
