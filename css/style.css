@@ -488,6 +488,15 @@ Normal
     text-align: center;
     border-radius: 15px;    
 }
+#help-buttons-back {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;  
+    margin-top: 5px;  
+}
 #help-buttons-race {
     background-color: lightgrey;
     color: black;
@@ -515,6 +524,14 @@ Hover
     text-align: center;
     border-radius: 15px;    
 }
+#help-buttons-back:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
 #help-buttons-race:Hover {
     background-color: grey;
     color: white;
@@ -535,6 +552,14 @@ Hover
 Active
 */
 #help-buttons-teach:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+#help-buttons-back:active {
     background-color: black;
     color: white;
     width: 100px;
