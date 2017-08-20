@@ -32,7 +32,7 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
         console.log("correct key"); // log this message to suggest that the user is correct
 
         assigned_key = char_keys[random(0, char_keys.length-1)]; // choose random character from the array
-        document.getElementById("reflex-single").style.marginRight = "17%";//re aligns the text
+        document.getElementById("reflex-single").style.marginRight = "14.5%";//re aligns the text
         document.getElementById("reflex-single").style.marginRight = "0px";//re aligns the text
         reflex_key.innerHTML = "Press Enter To Start"; // display the assigned key to the screen
         console.log(String.fromCharCode(assigned_key)); // log the entries
@@ -47,6 +47,10 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
             bestReaction_time = reaction_time; //set best time to last time
         } else if(reaction_time < bestReaction_time){ //if last time is better (less than) than best time
             bestReaction_time = reaction_time;//set best time to last time
+        }
+        reaction_time = reaction_time + ""
+        if(reaction_time.split("").length < 4){
+            reaction_time = reaction_time + 0
         }
         reflex_reaction_time.innerHTML = "Last : "+reaction_time + " secs" //display the reaction time of the user
         reflex_best_reaction_time.innerHTML = "Best : "+bestReaction_time+ " secs" //display the reaction time of the user
