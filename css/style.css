@@ -114,7 +114,7 @@ Normal
 }
 #teach-page-container {
     width: 310px;
-    margin-left: 45%;
+    margin-left: 47%;
     margin-top: -23%;
     margin-bottom: 5%;
 }
@@ -420,6 +420,9 @@ Active
 /*
 Relfex Page 
 */
+#reflex-body {
+    padding: 10px;
+}
 #reflex-text-container{
     color: white;
     font-family: "Helvetica", Helvetica, sans-serif;
@@ -427,7 +430,7 @@ Relfex Page
 #reflex-content {
     float: right;
     margin-right: 17%;
-    margin-top: 23%;
+    margin-top: 21%;
     font-size: 50px;
 }
 #reflex-stats {
@@ -436,11 +439,9 @@ Relfex Page
     padding-top: 10.5%;
     padding-bottom: 10.5%;
     padding-right: 7%;
-    margin-top: 12%;
-    margin-bottom: 12%;
-    margin-left: 7%;
     background: grey;
-    font-size: 30px;
+    font-size: 50px;
+    margin-top: 8%;
 }
 #reflex-stats-last {
     margin-bottom: 5px;
@@ -456,9 +457,8 @@ Normal
     height: 50px;
     text-align: center;
     border-radius: 15px;
-    margin-top: 40%;
-    margin-left: 75px;
-    float: right;
+    margin-left: 23%;
+    margin-top: 9%;
 }
 /*
 Hover
@@ -515,7 +515,8 @@ Normal
     width: 100px;
     height: 50px;
     text-align: center;
-    border-radius: 15px;    
+    border-radius: 15px;  
+    margin-top: 5px;  
 }
 #help-buttons-race {
     background-color: lightgrey;
