@@ -48,8 +48,8 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
         } else if(reaction_time < bestReaction_time){ //if last time is better (less than) than best time
             bestReaction_time = reaction_time;//set best time to last time
         }
-        reflex_reaction_time.innerHTML = "Last : "+reaction_time + " ms" //display the reaction time of the user
-        reflex_best_reaction_time.innerHTML = "Best : "+bestReaction_time+ " ms" //display the reaction time of the user
+        reflex_reaction_time.innerHTML = "Last : "+reaction_time + " secs" //display the reaction time of the user
+        reflex_best_reaction_time.innerHTML = "Best : "+bestReaction_time+ " secs" //display the reaction time of the user
         console.log(reaction_time); // log the entries
 
         prev_time = curr_time; // set previous time to the current time so that it calculates the current reation time
