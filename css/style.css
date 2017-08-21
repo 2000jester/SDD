@@ -131,10 +131,38 @@ Hover
     color: white;
     border-radius: 15px;
 }
+#teach-button-video:hover {
+    cursor: pointer;
+    text-align: center;
+    background-color: grey;
+    color: white;
+    border-radius: 15px;
+}
+#teach-button-text:hover {
+    cursor: pointer;
+    text-align: center;
+    background-color: grey;
+    color: white;
+    border-radius: 15px;
+}
 /*
 Active
 */
 #teach-button-back:active {
+    cursor: pointer;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+#teach-button-video:active {
+    cursor: pointer;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+#teach-button-text:active {
     cursor: pointer;
     text-align: center;
     background-color: black;
@@ -227,7 +255,7 @@ teach-text page
     margin-left: 6%;
     float: left;
 }
-#teach-button-container {
+#teach_text-button-container {
     margin-left: 65%;
 }
 /*
