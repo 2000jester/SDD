@@ -37,6 +37,9 @@ BG Colors
 /*
 Title Page
 */
+#title-logo {
+    margin-top: 7%;
+}
 /*
 Normal
 */
@@ -175,6 +178,10 @@ Active
 /*
 teach-text page
 */
+#teach_text-image-3 {
+    width: 250px;
+    height: 250px;
+}
 /*
 Normal
 */
