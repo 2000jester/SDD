@@ -717,7 +717,8 @@ help-race page
 }
 #set-2-image {
     float: right;
-    margin-top: 20%;
+    margin-top: 13%;
+    margin-right: 2%;
     background-color: red;
     padding-top: 4px;
     padding-right: 4px;
@@ -725,8 +726,9 @@ help-race page
 }
 #set-2-text {
     float: left;
-    width: 800px;
-    margin-top: 10%;
+    width: 700px;
+    margin-top: 6%;
+    margin-left: 2%;
     color: white;
     font-size: 25px;
     font-family: "Helvetica", Helvetica, sans-serif;
@@ -736,7 +738,8 @@ help-race page
 Normal
 */
 #help-race-back {
-    margin-top: 20%;
+    margin-top: 27%;
+    margin-left: -7%;
     background-color: lightgrey;
     color: black;
     width: 100px;
