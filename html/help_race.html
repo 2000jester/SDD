@@ -7,8 +7,25 @@
         <link href="../css/style.css" rel="stylesheet">
     </head>
     <body id="help-race-body">
-        <h1 id='help-race-page'style="text-align: center; font-family: Monaco; color:yellow;" >RACE</h1>
-        <p id='help-race-subtext'style="text-align: center; font-family: Monaco; color: yellow">The "race" game allows the user to test how fast they can type, providinng feedback on how many characters and words they typed and their WPM</p>
-        <img src="../Resources/race.png" alt="race screen pic" style="width:100%; height:100%;">
+        <div id="set-1">
+            <div id="set-1-image">
+                <img id="set-1-image-source" src="../Resources/race_stats.png">
+            </div>
+            <div id="set-1-text">Upon entering the "Test your speed" page you will be met with some
+                stats on the left of the page. Once you start the minigame it will start recording
+                the total amount of characters and words you have typed, it will also calculate your words per
+                minute"
+            </div>
+        </div>
+        <div id="set-2">
+            <div id="set-2-image">
+                <img id="set-2-image-source" src="../Resources/race_prompt.png">
+            </div>
+            <div id="set-2-text">Once you press "enter" to start the minigame you will be prompted with
+                a random word, which upon typing correctly will generate a new word for you to type. The goal
+                is to type as many words as you can in the provided minute before the minigame resets.
+            </div>
+        </div>
+        <button type="button" id="help-race-back" onclick="window.location.href='help.html'">Back</button>
     </body>
 </html>

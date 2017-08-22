@@ -687,3 +687,48 @@ Active
     text-align: center;
     border-radius: 15px;    
 }
+/*
+help-race page
+*/
+#set-1-image {
+    float: left;
+}
+#set-1-text {
+    float: right;
+    width: 900px;
+    color: white;
+    font-size: 25px;
+    font-family: "Helvetica", Helvetica, sans-serif;
+    line-height: 120%;
+}
+#set-2-image {
+    float: right;
+    margin-top: 20%;
+}
+#set-2-text {
+    float: left;
+    width: 800px;
+    margin-top: 10%;
+    color: white;
+    font-size: 25px;
+    font-family: "Helvetica", Helvetica, sans-serif;
+    line-height: 120%;
+}
+/*
+Normal
+*/
+#help-race-back {
+    margin-top: 20%;
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px; 
+}s
+/*
+Hover
+*/
+/*
+Active
+*/
