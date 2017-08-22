@@ -698,18 +698,30 @@ help-race page
 */
 #set-1-image {
     float: left;
+    margin-top: 1%;
+    margin-left: 2%;
+    background-color: red;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
 }
 #set-1-text {
     float: right;
-    width: 900px;
+    width: 800px;
     color: white;
     font-size: 25px;
     font-family: "Helvetica", Helvetica, sans-serif;
     line-height: 120%;
+    margin-top: 5%;
+    margin-right: 5%;
 }
 #set-2-image {
     float: right;
     margin-top: 20%;
+    background-color: red;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
 }
 #set-2-text {
     float: left;
@@ -731,7 +743,7 @@ Normal
     height: 50px;
     text-align: center;
     border-radius: 15px; 
-}s
+}
 /*
 Hover
 */
