@@ -38,7 +38,10 @@ function onKeyDown(evt){//function that is called when the keyDown event listene
         if(isRunning === true){//checks if the race game is running
             span();//calls span function
             letterCount = letterCount + 1;//increments letter count
-            document.getElementById("race-content-count").innerHTML ="Characters : "+letterCount;//updates the letter count element
+            if(document.getElementById("race-radio-character").checked){
+                document.getElementById("race-content-selected").style.fontSize = "43px";
+                document.getElementById("race-content-selected").innerHTML ="Characters : "+letterCount;//updates the letter count element
+            }
         }
     }
     if(isRunning==true){//checks if the race game is running
@@ -46,7 +49,9 @@ function onKeyDown(evt){//function that is called when the keyDown event listene
             newWord();//calls new word function 
             currentLetter = 0;//sets current letter index to 0
             wordsCount = wordsCount + 1;//increments the word count by 1
-            document.getElementById("race-content-words").innerHTML ="Words : "+wordsCount;//updates the word cont element
+            if(document.getElementById("race-radio-word").checked){
+                document.getElementById("race-content-selected").innerHTML ="Words : "+wordsCount;//updates the word cont element
+            }
         }
     }
 }
