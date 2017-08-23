@@ -775,13 +775,82 @@ help-reflex page
 #set-1-image-src {
     width: 400px;
     height: 290px;
+    float: left;
+    background-color: red;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-bottom: 4px;
+}
+#set-2-image-src {
+    float: right;
+    background-color: red;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-bottom: 4px;
+}
+#reflex-1-image {
+    margin-top: 2%;
+    margin-left: 2%;
+}
+#reflex-2-image {
+    margin-top: 13%;
+    margin-right: 5%;
+    float: right;
+}
+#reflex-1-text {
+    float: right;
+    width: 800px;
+    color: white;
+    font-size: 25px;
+    font-family: "Helvetica", Helvetica, sans-serif;
+    line-height: 120%;
+    margin-top: 6%;
+    margin-right: 5%;
+}
+#reflex-2-text {
+    float: left;
+    width: 700px;
+    margin-top: 4%;
+    margin-left: 2%;
+    color: white;
+    font-size: 25px;
+    font-family: "Helvetica", Helvetica, sans-serif;
+    line-height: 120%;
 }
 /*
 Normal
 */
+#help-reflex-back {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px; 
+    margin-top: 24%;
+    margin-left: -8%;
+}
 /*
 Hover
 */
+#help-reflex-back:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
 /*
 Active
 */
+#help-reflex-back:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
