@@ -26,7 +26,7 @@
                 <button type="button" id="menu-buttons-help" onclick="window.location.href='help.html'">Help</button>
             </div>
             <div id="menu-buttons-exit-container">
-                <button type="button" id="menu-buttons-exit" onclick="window.close()">Exit</button>
+                <button type="button" id="menu-buttons-exit" onclick="var canExit = false; if(confirm('Are you sure you want to exit?')){window.close()}">Exit</button>
             </div>
         </div>
     </body>
