@@ -49,8 +49,12 @@ function onKeyDown(evt) // contains the actions to perform if the keyDown event 
             bestReaction_time = reaction_time;//set best time to last time
         }
         reaction_time = reaction_time + ""
+        bestReaction_time = bestReaction_time + ""
         if(reaction_time.split("").length < 4){
             reaction_time = reaction_time + 0
+        }
+        if(bestReaction_time.split("").length < 4){
+            bestReaction_time = bestReaction_time + 0
         }
         reflex_reaction_time.innerHTML = "Last : "+reaction_time + " secs" //display the reaction time of the user
         reflex_best_reaction_time.innerHTML = "Best : "+bestReaction_time+ " secs" //display the reaction time of the user
