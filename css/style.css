@@ -854,3 +854,61 @@ Active
     text-align: center;
     border-radius: 15px;    
 }
+/*
+help-teach page
+*/
+#teach-1-image-source {
+    height: 340px;
+    width: 700px;
+}
+#teach-1-image {
+    background-color: red;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-bottom: -1px;
+    width: 700px;
+    margin-top: 2%;
+}
+#teach-1-text {
+    color: white;
+    margin-top: 5%;
+    font-size: 20px;
+    font-family: "Helvetica", Helvetica, sans-serif;
+    line-height: 120%;
+    width: 800px;
+}
+/*
+Normal
+*/
+#help-teach-back {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px; 
+    margin-top: 5%;
+}
+/*
+Hover
+*/
+#help-teach-back:Hover {
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
+/*
+Active
+*/
+#help-teach-back:active {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;    
+}
